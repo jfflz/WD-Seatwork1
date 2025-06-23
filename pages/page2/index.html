@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 2 - Wild Cats</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      color: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc80;
+    }
+
+    .header, .footer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    .header {
+      background-color: rgba(255, 204, 128, 0.85);
+    }
+
+    .footer {
+      background-color: rgba(161, 136, 127, 0.85);
+    }
+
+    .header div, .footer div {
+      margin: 10px;
+      text-align: center;
+    }
+
+    .header img, .footer img {
+      width: 200px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 800px;
+      backdrop-filter: blur(4px);
+    }
+
+    .content h1 {
+      color: #fff59d;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .content h2 {
+      color: #ffe082;
+      font-size: 2em;
+    }
+
+    .content p {
+      color: #f5f5f5;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+    <a href="page3.html">Page 3</a>
+  </nav>
+
+  <div class="header">
+    <div><img src="https://placekitten.com/200/120" alt="Cat 1"><p>Cat 1</p></div>
+    <div><img src="https://placekitten.com/201/120" alt="Cat 2"><p>Cat 2</p></div>
+    <div><img src="https://placekitten.com/202/120" alt="Cat 3"><p>Cat 3</p></div>
+    <div><img src="https://placekitten.com/203/120" alt="Cat 4"><p>Cat 4</p></div>
+    <div><img src="https://placekitten.com/204/120" alt="Cat 5"><p>Cat 5</p></div>
+  </div>
+
+  <div class="content">
+    <h1>Wild Cats of the World</h1>
+    <h2>Grace and Agility</h2>
+    <p>
+      Wild cats like leopards, cheetahs, and jaguars embody grace and speed in the animal kingdom. 
+      They are expert hunters, known for their stealth and stunning beauty. Explore their fascinating traits and habitats in this section.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div><img src="https://placekitten.com/210/120" alt="Cat A"><p>Footer Cat 1</p></div>
+    <div><img src="https://placekitten.com/211/120" alt="Cat B"><p>Footer Cat 2</p></div>
+    <div><img src="https://placekitten.com/212/120" alt="Cat C"><p>Footer Cat 3</p></div>
+    <div><img src="https://placekitten.com/213/120" alt="Cat D"><p>Footer Cat 4</p></div>
+    <div><img src="https://placekitten.com/214/120" alt="Cat E"><p>Footer Cat 5</p></div>
+  </div>
+
+</body>
+</html>
