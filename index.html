@@ -1,22 +1,128 @@
-<header class="center-logo-header">
-  <img src="logo.png" alt="Logo" height="50">
-  <nav>
-    <a href="#">Portfolio</a>
-    <a href="#">Blog</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lioness in the Wild</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fafafa;
+    }
 
-<style>
-.center-logo-header {
-  text-align: center;
-  padding: 1.5rem;
-  background: #eee;
-}
-.center-logo-header nav a {
-  margin: 0 1rem;
-  color: #222;
-  text-decoration: none;
-  font-weight: bold;
-}
-</style>
+    /* Header Style */
+    .header-column {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #4d372d;
+      color: white;
+    }
+    .header-column a {
+      color: #f9d342;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main h2 {
+      color: #444;
+      font-weight: normal;
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+
+    main h1 {
+      margin-bottom: 1rem;
+    }
+
+    /* Footer Style */
+    .footer-cols {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem;
+      background: #2e2e2e;
+      color: white;
+    }
+    .footer-cols a {
+      color: #f9d342;
+      text-decoration: none;
+    }
+    .footer-cols h4 {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header 1 -->
+  <header class="header-column">
+    <div>🦁 Lioness Watch</div>
+    <div><a href="#">Habitat</a> | <a href="#">Behavior</a></div>
+    <div><a href="#">Donate</a> | <a href="#">Contact</a></div>
+  </header>
+
+  <!-- Header 2 -->
+  <header class="header-column">
+    <div>🌿 Conservation</div>
+    <div><a href="#">Projects</a> | <a href="#">Impact</a></div>
+    <div><a href="#">Reports</a></div>
+  </header>
+
+  <!-- Header 3 -->
+  <header class="header-column">
+    <div>📸 Media</div>
+    <div><a href="#">Photos</a> | <a href="#">Videos</a></div>
+    <div><a href="#">Stories</a></div>
+  </header>
+
+  <!-- Header 4 -->
+  <header class="header-column">
+    <div>🧭 Expeditions</div>
+    <div><a href="#">Join</a> | <a href="#">Volunteer</a></div>
+    <div><a href="#">Field Work</a></div>
+  </header>
+
+  <!-- Header 5 -->
+  <header class="header-column">
+    <div>📚 Learn</div>
+    <div><a href="#">Articles</a> | <a href="#">FAQ</a></div>
+    <div><a href="#">Resources</a></div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <h2>JEFF LAZO - TC05</h2>
+    <h1>Welcome to the World of the Lioness</h1>
+    <p>
+      Discover the power, grace, and intelligence of lionesses in the African wilderness.  
+      Learn about their role in the pride, survival strategies, and how we can protect them.
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-cols">
+    <div>
+      <h4>About</h4>
+      <p>Learn about lionesses in their natural habitat.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Gallery</a><br>
+      <a href="#">Tracking</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>wild@lioness.org</p>
+    </div>
+  </footer>
+
+</body>
+</html>
