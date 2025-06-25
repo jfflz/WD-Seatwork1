@@ -3,135 +3,288 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page 2 - Wild Cats</title>
+  <title>Page 2 - Tigers & Lions</title>
   <style>
-    body {
+    /* Universal box-sizing for all elements */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body::before {
-      content: "";
+    /* Body and HTML styling for full height, font, text color, and background */
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      /* Using a background image, fallback if video isn't used */
+      background: url('https://cdn.petmojo.com/wp-content/uploads/2024/11/tigers-vs-lions-whats-the-difference.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Video background styling for full screen coverage and dimming */
+    .video-bg {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: -1;
+      z-index: -1; /* Puts it behind other content */
+      overflow: hidden;
     }
 
-    nav {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures video covers the area */
+      filter: brightness(0.4); /* Dims the video */
+    }
+
+    /* Header styling with semi-transparent background and flexible layout */
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2; /* Ensures header is above video background */
     }
 
+    /* Header title styling */
+    header h1 {
+      font-size: 1.5em;
+      color: #ffcc70; /* Accent color for the title */
+    }
+
+    /* Navigation links styling */
     nav a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s;
+      transition: color 0.3s ease; /* Smooth transition for hover effect */
     }
 
+    /* Navigation links hover effect */
     nav a:hover {
-      color: #ffcc80;
+      color: #ffcc70;
     }
 
-    .header, .footer {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 10px;
-      flex-wrap: wrap;
+    /* Main content area styling */
+    main {
+      padding: 40px 30px;
+      max-width: 900px;
+      margin: auto; /* Centers the main content horizontally */
+      position: relative;
+      z-index: 2; /* Ensures main content is above video background */
     }
 
-    .header {
-      background-color: rgba(255, 204, 128, 0.85);
+    /* Main content heading styling */
+    main h2 {
+      color: #ffe082; /* Accent color for headings */
+      margin-bottom: 20px;
     }
 
-    .footer {
-      background-color: rgba(161, 136, 127, 0.85);
-    }
-
-    .header div, .footer div {
-      margin: 10px;
-      text-align: center;
-    }
-
-    .header img, .footer img {
-      width: 200px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    }
-
-    .content {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      margin: 20px auto;
-      max-width: 800px;
-      backdrop-filter: blur(4px);
-    }
-
-    .content h1 {
-      color: #fff59d;
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    .content h2 {
-      color: #ffe082;
-      font-size: 2em;
-    }
-
-    .content p {
-      color: #f5f5f5;
+    /* Main content paragraph styling */
+    main p {
       font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 15px; /* Adds space below paragraphs */
+    }
+
+    /* Styling for animal images */
+    .animal-img {
+      width: 100%;
+      max-width: 450px;
+      height: auto; /* Maintain aspect ratio */
+      border: 4px solid #ffcc70;
+      border-radius: 12px;
+      margin: 20px auto; /* Centers images horizontally and adds vertical space */
+      display: block; /* Ensures margin: auto works for centering */
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .animal-img:hover {
+      transform: scale(1.02); /* Slightly enlarge on hover */
+    }
+
+    /* New section for the additional image and its text */
+    .additional-content {
+        background: rgba(0, 0, 0, 0.5); /* Slightly darker background for this section */
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        text-align: center; /* Center align content within this div */
+    }
+
+    .additional-content h3 {
+        color: #ffcc70;
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+
+    /* Styling for the newly added image */
+    .animated-image {
+        width: 100%;
+        max-width: 600px; /* Adjust max-width as needed */
+        height: auto;
+        border: 5px solid #ffe082; /* Different border color */
+        border-radius: 20px; /* More rounded corners */
+        margin: 30px auto;
+        display: block;
+        box-shadow: 0 0 30px rgba(255, 204, 112, 0.7); /* Glowing effect */
+        opacity: 0; /* Start invisible for animation */
+        transform: translateY(20px); /* Start slightly below for animation */
+        animation: fadeInSlideUp 1.5s ease-out forwards; /* Apply animation */
+    }
+
+    /* Keyframes for the fadeInSlideUp animation */
+    @keyframes fadeInSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* New styling for the combined animal image */
+    .combined-animal-image {
+        width: 100%;
+        max-width: 650px; /* Larger max-width for the combined image */
+        height: auto;
+        border: 6px solid #ffcc70; /* Thick border */
+        border-radius: 25px; /* More rounded corners */
+        margin: 40px auto; /* More vertical space */
+        display: block;
+        box-shadow: 0 0 40px rgba(255, 100, 0, 0.8), 0 0 80px rgba(255, 200, 0, 0.5); /* Stronger glowing effect */
+        animation: pulseBorder 2s infinite alternate ease-in-out; /* Pulsing border animation */
+    }
+
+    /* Keyframes for the pulseBorder animation */
+    @keyframes pulseBorder {
+        from {
+            border-color: #ffcc70;
+            box-shadow: 0 0 40px rgba(255, 100, 0, 0.8), 0 0 80px rgba(255, 200, 0, 0.5);
+        }
+        to {
+            border-color: #ffe082;
+            box-shadow: 0 0 50px rgba(255, 150, 0, 0.9), 0 0 90px rgba(255, 220, 0, 0.6);
+        }
+    }
+
+    /* Footer styling */
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      position: relative;
+      z-index: 2; /* Ensures footer is above video background */
+      margin-top: 40px; /* Add some space above the footer */
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column; /* Stack header items vertically */
+        padding: 15px;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 0 10px; /* Adjust spacing for smaller screens */
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .additional-content {
+          padding: 20px;
+      }
+
+      .animated-image,
+      .animal-img,
+      .combined-animal-image { /* Apply responsiveness to new image as well */
+          margin: 15px auto;
+      }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Page 1</a>
-    <a href="page2.html">Page 2</a>
-    <a href="page3.html">Page 3</a>
-  </nav>
-
-  <div class="header">
-    <div><img src="https://placekitten.com/200/120" alt="Cat 1"><p>Cat 1</p></div>
-    <div><img src="https://placekitten.com/201/120" alt="Cat 2"><p>Cat 2</p></div>
-    <div><img src="https://placekitten.com/202/120" alt="Cat 3"><p>Cat 3</p></div>
-    <div><img src="https://placekitten.com/203/120" alt="Cat 4"><p>Cat 4</p></div>
-    <div><img src="https://placekitten.com/204/120" alt="Cat 5"><p>Cat 5</p></div>
+  <!-- 🎞️ Optional Video Background (Can remove if not needed) -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/857195/857195-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <!-- Fallback to background image defined in body style -->
+    </video>
   </div>
 
-  <div class="content">
-    <h1>Wild Cats of the World</h1>
-    <h2>Grace and Agility</h2>
+  <!-- 🔝 Header -->
+  <header>
+    <h1>Wild Explorer</h1>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../page1/index.html">About</a>
+      <a href="../page2/index.html">Contents</a>
+      <a href="../page3/index.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- 📖 Main Content -->
+  <main>
+    <h2>The Power of Tigers and Lions</h2>
     <p>
-      Wild cats like leopards, cheetahs, and jaguars embody grace and speed in the animal kingdom. 
-      They are expert hunters, known for their stealth and stunning beauty. Explore their fascinating traits and habitats in this section.
+      Tigers are the largest of the wild cats and are known for their strength and solitary nature. They are native to Asia and thrive in dense forests and mangrove swamps. Their striped coats provide excellent camouflage in the wild.
     </p>
-  </div>
+    <img src="https://images.unsplash.com/photo-1603262110263-4e01d7c91be5" alt="Tiger" class="animal-img">
 
-  <div class="footer">
-    <div><img src="https://placekitten.com/210/120" alt="Cat A"><p>Footer Cat 1</p></div>
-    <div><img src="https://placekitten.com/211/120" alt="Cat B"><p>Footer Cat 2</p></div>
-    <div><img src="https://placekitten.com/212/120" alt="Cat C"><p>Footer Cat 3</p></div>
-    <div><img src="https://placekitten.com/213/120" alt="Cat D"><p>Footer Cat 4</p></div>
-    <div><img src="https://placekitten.com/214/120" alt="Cat E"><p>Footer Cat 5</p></div>
-  </div>
+    <p>
+      Lions, often called the "King of the Jungle", live in prides and dominate the savannas of Africa. Their thunderous roars can be heard up to 8 kilometers away. Unlike other cats, lions are social animals that work together to hunt and protect their group.
+    </p>
+    <img src="https://images.unsplash.com/photo-1602491453631-6e8c0db47c7e" alt="Lion" class="animal-img">
+
+    <!-- New section for the added image with animation -->
+    <div class="additional-content">
+        <h3>Exploring the Wilderness</h3>
+        <p>
+            Dive deeper into the majestic world of big cats. Their untamed beauty and raw power are a testament to nature's grandeur. Every stripe, every roar, tells a story of survival and dominance.
+        </p>
+        <img src="image_008bde.png" alt="Wilderness Exploration" class="animated-image">
+        <p>
+            From the dense jungles to the sprawling savannas, these creatures captivate our imagination and remind us of the precious biodiversity on our planet.
+        </p>
+    </div>
+
+    <!-- New section for the combined lion and tiger image -->
+    <div class="additional-content">
+        <h3>The Kings and Queens of the Wild Unite</h3>
+        <p>
+            Witness the awe-inspiring presence of both the majestic lion and the powerful tiger in a single frame, symbolizing the diverse beauty and strength of the animal kingdom.
+        </p>
+        <!-- Replaced the image source with the provided base64 data -->
+        <img src="data:image/jpeg;base64,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" alt="Lion and Tiger Combined" class="combined-animal-image">
+        <p>
+            Their combined essence speaks to the heart of wilderness, a realm where power, grace, and survival intertwine.
+        </p>
+    </div>
+  </main>
+
+  <!-- 🔻 Footer -->
+  <footer>
+    &copy; 2025 Wild Animals Explorer | Page 2 - Tigers & Lions
+  </footer>
 
 </body>
 </html>

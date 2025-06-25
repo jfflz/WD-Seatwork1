@@ -1,0 +1,128 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+
+  /* ✨ Glowing header text */
+  header h1 {
+    font-size: 1.5em;
+    color: #ffcc70;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #ffcc70;
+    }
+    to {
+      text-shadow: 0 0 20px #ffcc70, 0 0 30px #ffe082;
+    }
+  }
+
+  header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffcc70;
+    transform: scale(1.1);
+  }
+
+  main {
+    flex: 1;
+    padding: 40px 30px;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  main h2 {
+    color: #ffe082;
+    margin-bottom: 20px;
+    font-size: 2em;
+    animation: slideInLeft 1.2s ease-out;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  main p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    animation: fadeIn 2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    animation: pulseText 3s ease-in-out infinite;
+  }
+
+  @keyframes pulseText {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+</style>

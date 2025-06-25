@@ -3,135 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page 3 - Big Predators</title>
+  <title>Page 3 - Contact Us</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2') no-repeat center center fixed;
-      background-size: cover;
-      position: relative;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body::before {
-      content: "";
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1559589689-577aabd1a0d8') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .video-bg {
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
       z-index: -1;
+      overflow: hidden;
     }
 
-    nav {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      color: #ffcc70;
     }
 
     nav a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #ffcc80;
+      color: #ffcc70;
     }
 
-    .header, .footer {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
-
-    .header {
-      background-color: rgba(255, 204, 128, 0.85);
-    }
-
-    .footer {
-      background-color: rgba(161, 136, 127, 0.85);
-    }
-
-    .header div, .footer div {
-      margin: 10px;
-      text-align: center;
-    }
-
-    .header img, .footer img {
-      width: 200px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    }
-
-    .content {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      margin: 20px auto;
+    main {
+      padding: 40px 30px;
       max-width: 800px;
-      backdrop-filter: blur(4px);
+      margin: auto;
+      position: relative;
+      z-index: 2;
     }
 
-    .content h1 {
-      color: #fff59d;
-      font-size: 1.8em;
+    h2 {
+      margin-bottom: 20px;
+      color: #ffe082;
+    }
+
+    .contact-info {
+      margin-bottom: 30px;
+    }
+
+    .contact-info p {
+      font-size: 1.1em;
       margin-bottom: 10px;
     }
 
-    .content h2 {
-      color: #ffe082;
-      font-size: 2em;
+    .contact-form {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
     }
 
-    .content p {
-      color: #f5f5f5;
-      font-size: 1.1em;
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .contact-form button {
+      background: #ffcc70;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #ffe29d;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      z-index: 2;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Page 1</a>
-    <a href="page2.html">Page 2</a>
-    <a href="page3.html">Page 3</a>
-  </nav>
-
-  <div class="header">
-    <div><img src="https://placebear.com/200/120" alt="Bear 1"><p>Bear 1</p></div>
-    <div><img src="https://placebear.com/201/120" alt="Bear 2"><p>Bear 2</p></div>
-    <div><img src="https://placebear.com/202/120" alt="Bear 3"><p>Bear 3</p></div>
-    <div><img src="https://placebear.com/203/120" alt="Bear 4"><p>Bear 4</p></div>
-    <div><img src="https://placebear.com/204/120" alt="Bear 5"><p>Bear 5</p></div>
+  <!-- 🌿 Animated Background -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/857195/857195-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <!-- Fallback Image Already Handled via CSS -->
+    </video>
   </div>
 
-  <div class="content">
-    <h1>Big Predators</h1>
-    <h2>Strength and Survival</h2>
-    <p>
-      From grizzly bears to crocodiles and wolves, Earth's largest predators are symbols of strength, survival, and raw power. 
-      Learn how these beasts dominate their habitats and the role they play in the balance of nature.
-    </p>
-  </div>
+  <!-- 🔝 Header -->
+  <header>
+    <h1>Wild Explorer</h1>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../page1/index.html">About</a>
+      <a href="../page2/index.html">Contents</a>
+      <a href="../page3/index.html">Contact Us</a>
+    </nav>
+  </header>
 
-  <div class="footer">
-    <div><img src="https://placebear.com/210/120" alt="Bear A"><p>Footer Bear 1</p></div>
-    <div><img src="https://placebear.com/211/120" alt="Bear B"><p>Footer Bear 2</p></div>
-    <div><img src="https://placebear.com/212/120" alt="Bear C"><p>Footer Bear 3</p></div>
-    <div><img src="https://placebear.com/213/120" alt="Bear D"><p>Footer Bear 4</p></div>
-    <div><img src="https://placebear.com/214/120" alt="Bear E"><p>Footer Bear 5</p></div>
-  </div>
+  <!-- 📞 Main Contact Section -->
+  <main>
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>📞 Phone:</strong> +1 (555) 123-4567</p>
+      <p><strong>📧 Email:</strong> contact@wildexplorer.com</p>
+      <p><strong>🌐 Website:</strong> www.wildexplorer.com</p>
+      <p><strong>📍 Location:</strong> Safari Rd, Wildlife Park, Earth</p>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- 🔻 Footer -->
+  <footer>
+    &copy; 2025 Wild Animals Explorer | Get in Touch with Us
+  </footer>
 
 </body>
 </html>

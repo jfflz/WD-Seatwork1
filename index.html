@@ -5,69 +5,211 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - Wild Animals</title>
   <style>
-    body {
+    /* Universal box-sizing for all elements */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling for full height, font, background image, and overlay */
+    body {
+      font-family: 'Segoe UI', sans-serif;
       background: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2') no-repeat center center fixed;
       background-size: cover;
       position: relative;
+      height: 100vh; /* Full viewport height */
       color: #fff;
+      overflow: hidden; /* Prevent scrollbars from background overlay */
     }
 
+    /* Overlay for dimming the background image */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.65); /* Darker overlay */
+      z-index: -1; /* Ensures it's behind content */
     }
 
+    /* Brand/Name display in the upper left */
+    .brand-info {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        color: #ffcc70; /* Highlight color */
+        font-size: 1.1em;
+        font-weight: bold;
+        z-index: 10; /* Ensure it's above other elements if needed */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle shadow for readability */
+    }
+
+    /* NAVIGATION - aligned to top right */
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      z-index: 10; /* Ensure nav is also above other elements */
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 1.05em;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease; /* Smooth color transition on hover */
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffcc70; /* Accent color for underline */
+      transition: width 0.3s ease; /* Smooth underline animation */
+      margin: auto;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+        color: #ffcc70; /* Change color on hover */
+    }
+
+    /* Main content area for the home page */
     .home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
       text-align: center;
-      padding: 80px 20px;
+      padding: 20px;
+      position: relative; /* Needed for z-index context if other elements overlap */
+      z-index: 1; /* Ensure content is above background overlay */
     }
 
+    /* Styling for the circular image */
     .home-content img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #fff59d;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      width: 160px;
+      height: 160px;
+      border-radius: 50%; /* Makes the image circular */
+      object-fit: cover; /* Ensures image covers the circle */
+      border: 4px solid #ffcc70; /* Accent color border */
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6); /* Shadow effect */
+      margin-bottom: 25px;
+      transition: transform 0.3s ease; /* Smooth transform on hover */
+    }
+
+    .home-content img:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    /* Main heading styling */
+    .home-content h1 {
+      font-size: 2.8em;
+      color: #ffe082; /* Another accent color */
       margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow for better readability */
     }
 
-    .home-content h2 {
-      font-size: 2.5em;
-      color: #ffe082;
-      margin-bottom: 30px;
-    }
-
-    .enter-btn {
-      padding: 12px 30px;
+    /* Paragraph text styling */
+    .home-content p {
       font-size: 1.2em;
-      background-color: #ffcc80;
+      max-width: 600px;
+      color: #f0f0f0;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* Enter button styling */
+    .enter-btn {
+      padding: 14px 32px;
+      font-size: 1.1em;
+      background-color: #ffcc70; /* Accent background */
       color: #000;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Button shadow */
     }
 
     .enter-btn:hover {
-      background-color: #ffe0b2;
+      background-color: #ffe29d; /* Lighter on hover */
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .brand-info {
+            font-size: 0.9em;
+            top: 15px;
+            left: 15px;
+        }
+
+        nav {
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        nav a {
+            margin-left: 0;
+            margin-top: 10px; /* Stack links vertically */
+            font-size: 0.95em;
+        }
+
+        .home-content h1 {
+            font-size: 2em;
+        }
+
+        .home-content p {
+            font-size: 1em;
+            padding: 0 10px; /* Add horizontal padding for paragraphs */
+        }
+
+        .home-content img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .enter-btn {
+            padding: 12px 25px;
+            font-size: 1em;
+        }
     }
   </style>
 </head>
 <body>
 
-  <!-- Home Page Content -->
+  <!-- Brand/Name in the upper left -->
+  <div class="brand-info">
+    JEFF LAZO - TC05 - WD SEATWORK 1
+  </div>
+
+  <!-- Navigation Top Right -->
+  <nav>
+    <a href="pages/page1/index.html">About</a>
+    <a href="pages/page2/index.html">Contents</a>
+    <a href="pages/page3/index.html">Contact Us</a>
+  </nav>
+
   <div class="home-content">
     <img src="https://i.pinimg.com/564x/03/e4/f7/03e4f755455b4c04874cee0d94087725.jpg" alt="Wild Logo">
-    <h2>WILD ANIMALS EXPLORER</h2>
+    <h1>Welcome to Wild Animals Explorer</h1>
+    <p>Step into the untamed world of lions, tigers, elephants, wolves, and more. Start your journey through nature’s most extraordinary creatures.</p>
     <a href="pages/page1/index.html" class="enter-btn">Enter the Wild</a>
   </div>
 
