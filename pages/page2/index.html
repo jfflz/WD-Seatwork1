@@ -1,290 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page 2 - Tigers & Lions</title>
-  <style>
-    /* Universal box-sizing for all elements */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Body and HTML styling for full height, font, text color, and background */
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      /* Using a background image, fallback if video isn't used */
-      background: url('https://cdn.petmojo.com/wp-content/uploads/2024/11/tigers-vs-lions-whats-the-difference.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    /* Video background styling for full screen coverage and dimming */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1; /* Puts it behind other content */
-      overflow: hidden;
-    }
-
-    .video-bg video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures video covers the area */
-      filter: brightness(0.4); /* Dims the video */
-    }
-
-    /* Header styling with semi-transparent background and flexible layout */
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 2; /* Ensures header is above video background */
-    }
-
-    /* Header title styling */
-    header h1 {
-      font-size: 1.5em;
-      color: #ffcc70; /* Accent color for the title */
-    }
-
-    /* Navigation links styling */
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease; /* Smooth transition for hover effect */
-    }
-
-    /* Navigation links hover effect */
-    nav a:hover {
-      color: #ffcc70;
-    }
-
-    /* Main content area styling */
-    main {
-      padding: 40px 30px;
-      max-width: 900px;
-      margin: auto; /* Centers the main content horizontally */
-      position: relative;
-      z-index: 2; /* Ensures main content is above video background */
-    }
-
-    /* Main content heading styling */
-    main h2 {
-      color: #ffe082; /* Accent color for headings */
-      margin-bottom: 20px;
-    }
-
-    /* Main content paragraph styling */
-    main p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 15px; /* Adds space below paragraphs */
-    }
-
-    /* Styling for animal images */
-    .animal-img {
-      width: 100%;
-      max-width: 450px;
-      height: auto; /* Maintain aspect ratio */
-      border: 4px solid #ffcc70;
-      border-radius: 12px;
-      margin: 20px auto; /* Centers images horizontally and adds vertical space */
-      display: block; /* Ensures margin: auto works for centering */
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease; /* Smooth transition for hover effect */
-    }
-
-    .animal-img:hover {
-      transform: scale(1.02); /* Slightly enlarge on hover */
-    }
-
-    /* New section for the additional image and its text */
-    .additional-content {
-        background: rgba(0, 0, 0, 0.5); /* Slightly darker background for this section */
-        padding: 30px;
-        border-radius: 15px;
-        margin-top: 40px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        text-align: center; /* Center align content within this div */
-    }
-
-    .additional-content h3 {
-        color: #ffcc70;
-        margin-bottom: 20px;
-        font-size: 1.8em;
-    }
-
-    /* Styling for the newly added image */
-    .animated-image {
-        width: 100%;
-        max-width: 600px; /* Adjust max-width as needed */
-        height: auto;
-        border: 5px solid #ffe082; /* Different border color */
-        border-radius: 20px; /* More rounded corners */
-        margin: 30px auto;
-        display: block;
-        box-shadow: 0 0 30px rgba(255, 204, 112, 0.7); /* Glowing effect */
-        opacity: 0; /* Start invisible for animation */
-        transform: translateY(20px); /* Start slightly below for animation */
-        animation: fadeInSlideUp 1.5s ease-out forwards; /* Apply animation */
-    }
-
-    /* Keyframes for the fadeInSlideUp animation */
-    @keyframes fadeInSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* New styling for the combined animal image */
-    .combined-animal-image {
-        width: 100%;
-        max-width: 650px; /* Larger max-width for the combined image */
-        height: auto;
-        border: 6px solid #ffcc70; /* Thick border */
-        border-radius: 25px; /* More rounded corners */
-        margin: 40px auto; /* More vertical space */
-        display: block;
-        box-shadow: 0 0 40px rgba(255, 100, 0, 0.8), 0 0 80px rgba(255, 200, 0, 0.5); /* Stronger glowing effect */
-        animation: pulseBorder 2s infinite alternate ease-in-out; /* Pulsing border animation */
-    }
-
-    /* Keyframes for the pulseBorder animation */
-    @keyframes pulseBorder {
-        from {
-            border-color: #ffcc70;
-            box-shadow: 0 0 40px rgba(255, 100, 0, 0.8), 0 0 80px rgba(255, 200, 0, 0.5);
-        }
-        to {
-            border-color: #ffe082;
-            box-shadow: 0 0 50px rgba(255, 150, 0, 0.9), 0 0 90px rgba(255, 220, 0, 0.6);
-        }
-    }
-
-    /* Footer styling */
-    footer {
-      background: rgba(0, 0, 0, 0.7);
-      color: #ccc;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      position: relative;
-      z-index: 2; /* Ensures footer is above video background */
-      margin-top: 40px; /* Add some space above the footer */
-    }
-
-    /* Responsive design for smaller screens */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column; /* Stack header items vertically */
-        padding: 15px;
-      }
-
-      nav {
-        margin-top: 10px;
-      }
-
-      nav a {
-        margin: 0 10px; /* Adjust spacing for smaller screens */
-      }
-
-      main {
-        padding: 20px;
-      }
-
-      .additional-content {
-          padding: 20px;
-      }
-
-      .animated-image,
-      .animal-img,
-      .combined-animal-image { /* Apply responsiveness to new image as well */
-          margin: 15px auto;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lioness: Hunting & Survival</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="bg-blue-50 min-h-screen flex flex-col font-inter text-gray-800">
+    <!-- Header section removed as requested -->
 
-  <!-- 🎞️ Optional Video Background (Can remove if not needed) -->
-  <div class="video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="https://videos.pexels.com/video-files/857195/857195-hd_1920_1080_25fps.mp4" type="video/mp4">
-      <!-- Fallback to background image defined in body style -->
-    </video>
-  </div>
+    <main class="flex-grow container mx-auto p-8">
+        <section class="bg-white rounded-2xl shadow-xl p-8 mb-8 animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-blue-900">Strategic Hunters</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Lionesses are highly skilled and strategic hunters, responsible for providing the majority of food
+                        for the pride. Their success lies in their remarkable ability to cooperate and coordinate their efforts,
+                        a trait rarely seen in other large predators. They employ various tactics, often surrounding prey
+                        or driving it towards other waiting lionesses.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Their keen eyesight, powerful build, and incredible agility make them formidable predators. They can
+                        reach speeds of up to 50 mph (80 km/h) over short distances, though their stamina is limited. This
+                        means their hunting strategy often involves a rapid, decisive ambush.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x400/blue/white?text=Hunting+Lioness" alt="Hunting Lioness" class="rounded-xl shadow-md animate-pulse-effect">
+            </div>
+        </section>
 
-  <!-- 🔝 Header -->
-  <header>
-    <h1>Wild Explorer</h1>
-    <nav>
-      <a href="../../index.html">Home</a>
-      <a href="../page1/index.html">About</a>
-      <a href="../page2/index.html">Contents</a>
-      <a href="../page3/index.html">Contact Us</a>
-    </nav>
-  </header>
+        <section class="bg-white rounded-2xl shadow-xl p-8 animate-fade-in-delay">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-blue-900">Adaptation and Resilience</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="https://placehold.co/600x400/blue/white?text=Lioness+in+Savanna" alt="Lioness in Savanna" class="rounded-xl shadow-md animate-rotate-y order-2 md:order-1">
+                <div class="order-1 md:order-2">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Survival in the harsh African savanna requires immense resilience and adaptability. Lionesses face
+                        numerous challenges, including competition from other predators, scarcity of prey, and environmental
+                        factors like droughts. Their ability to adapt their hunting techniques to different prey species
+                        and environmental conditions is crucial.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Beyond hunting, lionesses are also responsible for defending their territory and protecting their cubs
+                        from threats. Their collective strength and unwavering determination ensure the pride's continuity,
+                        making them true symbols of survival and strength in the wild.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- 📖 Main Content -->
-  <main>
-    <h2>The Power of Tigers and Lions</h2>
-    <p>
-      Tigers are the largest of the wild cats and are known for their strength and solitary nature. They are native to Asia and thrive in dense forests and mangrove swamps. Their striped coats provide excellent camouflage in the wild.
-    </p>
-    <img src="https://images.unsplash.com/photo-1603262110263-4e01d7c91be5" alt="Tiger" class="animal-img">
+    <footer class="footer-designs-page2 bg-blue-800 text-white p-6 rounded-t-2xl shadow-lg animate-slide-up">
+        <h2 class="text-3xl font-bold mb-4 text-center">Footer Designs</h2>
+        <div class="back-to-home-button-container">
+            <a href="../index.html" class="back-to-home-button">Back Home</a>
+        </div>
 
-    <p>
-      Lions, often called the "King of the Jungle", live in prides and dominate the savannas of Africa. Their thunderous roars can be heard up to 8 kilometers away. Unlike other cats, lions are social animals that work together to hunt and protect their group.
-    </p>
-    <img src="https://images.unsplash.com/photo-1602491453631-6e8c0db47c7e" alt="Lion" class="animal-img">
+        <div class="footer-grid-page2">
+            <!-- Left Column -->
+            <div class="footer-column-left">
+                <p class="mb-2">&copy; 2025 Jeff Lazo</p>
+                <p class="mb-1">Email: lioness666999@gmail.com</p>
+                <p class="mb-4">Phone: +69 6666 666 6666</p>
+                <ul class="flex space-x-4 justify-start">
+                    <li><a href="#" class="footer-link">Terms</a></li>
+                    <li><a href="#" class="footer-link">Privacy</a></li>
+                </ul>
+                <div class="mt-4">
+                    <h4 class="font-semibold mb-2">Follow Us:</h4>
+                    <div class="flex space-x-3 justify-start text-2xl">
+                        <!-- Facebook Icon -->
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="text-blue-500 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <!-- YouTube Icon -->
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="text-red-500 hover:text-red-400 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <!-- Instagram Icon -->
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="text-pink-500 hover:text-pink-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <!-- New section for the added image with animation -->
-    <div class="additional-content">
-        <h3>Exploring the Wilderness</h3>
-        <p>
-            Dive deeper into the majestic world of big cats. Their untamed beauty and raw power are a testament to nature's grandeur. Every stripe, every roar, tells a story of survival and dominance.
-        </p>
-        <img src="image_008bde.png" alt="Wilderness Exploration" class="animated-image">
-        <p>
-            From the dense jungles to the sprawling savannas, these creatures captivate our imagination and remind us of the precious biodiversity on our planet.
-        </p>
-    </div>
+            <!-- Right Column -->
+            <div class="footer-column-right">
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <h4 class="font-semibold mb-2">Explore</h4>
+                        <ul>
+                            <li><a href="#" class="footer-link">Home</a></li>
+                            <li><a href="#" class="footer-link">Items</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Company</h4>
+                        <ul>
+                            <li><a href="#" class="footer-link">About</a></li>
+                            <li><a href="#" class="footer-link">Contact</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Support</h4>
+                        <ul>
+                            <li><a href="#" class="footer-link">Contact</a></li>
+                            <li><a href="#" class="footer-link">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-    <!-- New section for the combined lion and tiger image -->
-    <div class="additional-content">
-        <h3>The Kings and Queens of the Wild Unite</h3>
-        <p>
-            Witness the awe-inspiring presence of both the majestic lion and the powerful tiger in a single frame, symbolizing the diverse beauty and strength of the animal kingdom.
-        </p>
-        <!-- Replaced the image source with the provided base64 data -->
-        <img src="data:image/jpeg;base64,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" alt="Lion and Tiger Combined" class="combined-animal-image">
-        <p>
-            Their combined essence speaks to the heart of wilderness, a realm where power, grace, and survival intertwine.
-        </p>
-    </div>
-  </main>
+                <div class="newsletter-section mb-6">
+                    <h4 class="font-semibold mb-2">Subscribe to our newsletter</h4>
+                    <div class="flex flex-col sm:flex-row gap-2 justify-center">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="newsletter-button">Subscribe</button>
+                    </div>
+                </div>
 
-  <!-- 🔻 Footer -->
-  <footer>
-    &copy; 2025 Wild Animals Explorer | Page 2 - Tigers & Lions
-  </footer>
-
+                <div class="flex space-x-4 justify-center">
+                    <a href="#" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Feedback</a>
+                    <a href="#" class="footer-link">Site Map</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

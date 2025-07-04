@@ -1,113 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page 1 - Wild Animals</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 1.5em;
-      color: #ffcc70;
-    }
-
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1em;
-    }
-
-    nav a:hover {
-      color: #ffcc70;
-    }
-
-    main {
-      flex: 1;
-      padding: 40px 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    main h2 {
-      color: #ffe082;
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-
-    main p {
-      line-height: 1.6;
-      font-size: 1.1em;
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.7);
-      color: #aaa;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Designs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="min-h-screen flex flex-col font-inter text-gray-100">
+    <div class="main-container">
+        <h1 class="page-title">Header Designs</h1>
+        <!-- This is the "Back Home" button code with special styling -->
+        <div class="back-to-home-button-container">
+            <a href="/index.html" class="back-to-home-button">Back Home</a>
+        </div>
 
-  <!-- Header -->
-  <header>
-    <h1>Wild Explorer</h1>
-    <nav>
-      <a href="../../index.html">Home</a>
-      <a href="../page1/index.html">About</a>
-      <a href="../page2/index.html">Contents</a>
-      <a href="../page3/index.html">Contact Us</a>
-    </nav>
-  </header>
+        <div class="content-grid">
+            <!-- Header Design 1: Standard Navigation -->
+            <div class="grid-section header-design-1">
+                <h3 class="section-title">Standard Navigation</h3>
+                <nav class="flex justify-center space-x-4 text-lg">
+                    <a href="../index.html" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">SERVICES</a>
+                    <a href="#" class="nav-link">CONTACTS</a>
+                </nav>
+            </div>
 
-  <!-- Page Content -->
-  <main>
-    <h2>About Lions</h2>
-    <p>
-      Lions are one of the most majestic wild animals in the world. Known as the king of the jungle, they live in groups called prides and are primarily found in Africa. Males are known for their impressive manes, and they play a protective role in the pride.
-    </p>
-  </main>
+            <!-- Header Design 2: Brand with Search -->
+            <div class="grid-section header-design-2">
+                <h3 class="section-title">Brand & Search</h3>
+                <!-- Adjusted layout to move search below MyBrand -->
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl font-bold text-yellow-300 mb-2">MyBrand</span>
+                    <div class="search-container flex w-full justify-center">
+                        <input type="text" placeholder="Search..." class="search-input">
+                        <button class="search-button">Go</button>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Wild Animals Explorer | All rights reserved.
-  </footer>
+            <!-- Header Design 3: User Account & Dashboard -->
+            <div class="grid-section header-design-3">
+                <h3 class="section-title">User Account</h3>
+                <!-- Changed 'items-center' to 'items-start' and added 'pl-4' for left alignment with padding -->
+                <nav class="flex flex-col items-start space-y-2 text-sm pl-4">
+                    <a href="#" class="nav-link">Dashboard</a>
+                    <a href="#" class="nav-link">Profile</a>
+                    <a href="#" class="nav-link">Settings</a>
+                </nav>
+            </div>
 
+            <!-- Header Design 4: Multi-level Navigation (Placeholder for more complex structure) -->
+            <div class="grid-section header-design-4">
+                <h3 class="section-title">Detailed Navigation</h3>
+                <nav class="flex flex-col items-center space-y-2 text-lg">
+                    <a href="#" class="nav-link">Main</a>
+                    <a href="#" class="nav-link">About Us</a>
+                    <a href="#" class="nav-link">Products</a>
+                    <a href="#" class="nav-link">Blog</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Header Design 5: Welcome & Authentication -->
+            <div class="grid-section header-design-5">
+                <h3 class="section-title">Welcome & Auth</h3>
+                <!-- Changed 'items-center' to 'items-start' and added 'pl-4' for left alignment with padding -->
+                <nav class="flex flex-col items-start space-y-2 text-sm pl-4">
+                    <a href="#" class="nav-link">Welcome</a>
+                    <a href="#" class="nav-link">Login</a>
+                    <a href="#" class="nav-link">Sign Up</a>
+                </nav>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,97 +1,96 @@
-<a name="readme-top">
+<a name="readme-top"></a>
 
 <br/>
 
 <br />
 <div align="center">
-  <a href="https://github.com/zyx-0314/">
-  <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
-  </a>
-<!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+<a href="https://github.com/jfflz/">
+My Personal Journey: Understanding the Lioness
+<img src="./assets/img/1.jpg.jpg" alt="Nyebe" width="130" height="100">
+</a>
+<h3 align="center">WD-Lioness-Reflections</h3>
 </div>
-<!-- TODO: Make a short description -->
-<div align="center">
-  Short Description. (Optional)
-</div>
+This project is a personal exploration into the captivating world of lionesses, reflecting my fascination and learning journey about these magnificent creatures.
 
 <br />
 
-<!-- TODO: Change the zyx-0314 into your github username  -->
-<!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
-
-[![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
-
----
+Jeff Lazo
+WD-Seatwork1
 
 <br />
 <br />
 
-<!-- TODO: If you want to add more layers for your readme -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#overview">Overview</a>
-      <ol>
-        <li>
-          <a href="#key-components">Key Components</a>
-        </li>
-        <li>
-          <a href="#technology">Technology</a>
-        </li>
-      </ol>
-    </li>
-    <li>
-      <a href="#rule,-practices-and-principles">Rules, Practices and Principles</a>
-    </li>
-    <li>
-      <a href="#resources">Resources</a>
-    </li>
-  </ol>
+<summary>Table of Contents</summary>
+<ol>
+<li>
+<a href="#overview">Overview</a>
+<ol>
+<li>
+<a href="#key-components">Key Components</a>
+</li>
+<li>
+<a href="#technology">Technology</a>
+</li>
+</ol>
+</li>
+<li>
+<a href="#rule,-practices-and-principles">Rules, Practices and Principles</a>
+</li>
+<li>
+<a href="#resources">Resources</a>
+</li>
+</ol>
 </details>
 
----
+Overview
+This project, WD-Lioness-Reflections, is a multi-page website that serves as a personal portfolio and educational resource, reflecting my deep interest in lionesses. It's a journey to understand and share insights into their strength, social bonds, and survival in the wild, built through a series of web design exercises.
 
-## Overview
+Purpose:
 
-<!-- TODO: To be changed -->
-<!-- The following are just sample -->
-Description of the project in details.
+To document my learning and understanding of lioness behavior and ecology.
 
-Guiding Question:
-- What is the project
-- Whats the purpose
-- What are key components
-- What technology used and how it is used
+To showcase personal web development skills through practical application.
 
-### Key Components
-<!-- TODO: List of Key Components -->
-<!-- The following are just sample -->
-- MultiPage Website/Single Page Website
-- Parallax transition
-- Transactional
+To create a visually engaging platform that combines personal interest with technical execution.
 
-### Technology
-<!-- TODO: List of Technology Used -->
-![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
+To provide a structured overview of key lioness characteristics and my design interpretations.
 
-## Rules, Practices and Principles
-1. Always use `WD-` in the front of the Title of the Project for the Subject followed by your custom naming.
-2. Do not rename any .html files; always use `index.html` as the filename.
-3. Place Files in their respective folders.
-4. All file naming are in camel case.
-   - Camel case is naming format where there is no white space in separation of each words, the first word is in all lower case while the succeding words first letter are in upper followed by lower cased letters.
-   - ex.: buttonAnimatedStyle.css
-5. Use only `External CSS`.
-6. Renaming of Pages folder names are a must, and relates to what it is doing or data it holding.
-7. File Structure to follow below.
+Key Components
+Home Page (index.html): The entry point to my lioness exploration, featuring a personal introduction and navigation to thematic sections.
 
-```
+Header Design Interpretations (page1/index.html): A collection of header layouts, each designed to evoke different aspects of the lioness's world or my personal connection to the theme.
+
+Footer Design Concepts (page2/index.html): Various footer designs, including contact details, social links, and navigational elements, reflecting a blend of personal branding and functional design.
+
+Informative Content: Sections dedicated to lioness social structures, hunting techniques, and cub rearing, presented with a personal touch.
+
+Interactive Navigation: Smooth transitions and clear links for an intuitive user experience across the different pages.
+
+Technology
+Tailwind CSS: Utilized for rapid and responsive styling, allowing focus on content and structure.
+
+Font Awesome: Integrated for modern and scalable icons, enhancing visual appeal.
+
+Rules, Practices and Principles
+Always use WD- in the front of the Title of the Project for the Subject followed by your custom naming.
+
+Do not rename any .html files; always use index.html as the filename.
+
+Place Files in their respective folders.
+
+All file naming are in camel case.
+
+Camel case is naming format where there is no white space in separation of each words, the first word is in all lower case while the succeding words first letter are in upper followed by lower cased letters.
+
+ex.: buttonAnimatedStyle.css
+
+Use only External CSS.
+
+Renaming of Pages folder names are a must, and relates to what it is doing or data it holding.
+
+File Structure to follow below.
+
 WD-ProjectName
 └─ assets
 |   └─ css
@@ -101,22 +100,52 @@ WD-ProjectName
 |   └─ js
 |       └─ script.js
 └─ pages
-|  └─ pageName
-|     └─ assets
-|     |  └─ css
-|     |  |  └─ style.css
-|     |  └─ img
-|     |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|     |  └─ js
-|     |     └─ script.js
-|     └─ index.html
+|   └─ pageName
+|       └─ assets
+|       |   └─ css
+|       |   |   └─ style.css
+|       |   └─ img
+|       |   |   └─ fileWith.jpeg/.jpg/.webp/.png
+|       |   └─ js
+|       |       └─ script.js
+|       └─ index.html
 └─ index.html
 └─ readme.md
-```
 
-## Resources
+Resources
+Title
 
-<!-- TODO: Add References -->
-| Title | Purpose | Link |
-|-|-|-|
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+Purpose
+
+Link
+
+National Geographic - Lioness
+
+General information and facts about lionesses.
+
+https://www.nationalgeographic.com/animals/mammals/facts/lioness
+
+Wildlife Conservation Society
+
+Resources on lion conservation and behavior.
+
+https://www.wcs.org/
+
+Tailwind CSS Documentation
+
+Official documentation for Tailwind CSS utility classes and configuration.
+
+https://tailwindcss.com/docs
+
+Google Fonts
+
+Used for importing the 'Inter' font.
+
+https://fonts.google.com/
+
+Font Awesome
+
+Provides a library of icons used throughout the website.
+
+https://fontawesome.com/
+

@@ -1,75 +1,106 @@
-/* 🌀 Fade in animation */
-@keyframes fadeInUp {
-  from {
+/* Custom font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animations for Page 2 */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseEffect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.4);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(0, 0, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 255, 0);
+    }
+}
+
+@keyframes rotateY {
+    from {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.5s;
     opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
-/* 🧡 Glowing Text */
-.glow-text {
-  color: #ffe082;
-  text-shadow: 0 0 10px #ffcc70, 0 0 20px #ffcc70, 0 0 30px #ffcc70;
-  animation: glowPulse 2s ease-in-out infinite alternate;
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
 }
 
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 5px #ffcc70;
-  }
-  to {
-    text-shadow: 0 0 20px #ffcc70;
-  }
+.animate-pulse-effect {
+    animation: pulseEffect 2s infinite;
 }
 
-/* 🖼️ Image Zoom Animation */
-.animal-img {
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+.animate-rotate-y {
+    animation: rotateY 1s ease-out forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
 }
 
-.animal-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(255, 204, 112, 0.7);
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 2s;
+    opacity: 0;
 }
 
-/* ✨ Animate on page load */
-main h2,
-main p,
-.animal-img {
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
+/* Navigation link hover effect */
+.nav-link {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-main h2 {
-  animation-delay: 0.3s;
-}
-
-main p:nth-of-type(1) {
-  animation-delay: 0.5s;
-}
-
-.animal-img:nth-of-type(1) {
-  animation-delay: 0.7s;
-}
-
-main p:nth-of-type(2) {
-  animation-delay: 1s;
-}
-
-.animal-img:nth-of-type(2) {
-  animation-delay: 1.2s;
-}
-
-/* ✨ Navigation Hover Effect */
-nav a {
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ffcc70;
-  text-shadow: 0 0 5px #ffe082;
+.nav-link:hover {
+    color: #bfdbfe; /* blue-200 */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }

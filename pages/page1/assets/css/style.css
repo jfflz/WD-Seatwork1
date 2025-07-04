@@ -1,128 +1,192 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* Custom font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: url('https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a') no-repeat center center fixed;
+body {
+    font-family: 'Inter', sans-serif;
+    /* Updated background to match the blue-green gradient from the latest screenshot */
+    background: linear-gradient(135deg, #1e2a3a 0%, #2e4a5a 50%, #3e5a6a 100%); /* Blue-green gradient */
     background-size: cover;
-    min-height: 100vh;
-    color: #fff;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
-    flex-direction: column;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-  }
-
-  /* ✨ Glowing header text */
-  header h1 {
-    font-size: 1.5em;
-    color: #ffcc70;
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 5px #ffcc70;
-    }
-    to {
-      text-shadow: 0 0 20px #ffcc70, 0 0 30px #ffe082;
-    }
-  }
-
-  header {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-  }
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 2rem; /* Add some padding for smaller screens */
+}
 
-  nav a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
+.main-container {
+    background-color: rgba(0, 0, 0, 0.85); /* Darker, semi-transparent background for the content area */
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    max-width: 90%; /* Responsive width */
+    width: 1000px; /* Max width for larger screens */
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.page-title {
+    font-size: 3.5rem;
     font-weight: bold;
-    font-size: 1em;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
+    color: #6ee7b7; /* Soft green for main title */
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(110, 231, 183, 0.8); /* Greenish glow */
+    animation: slideInDown 0.8s ease-out forwards;
+}
 
-  nav a:hover {
-    color: #ffcc70;
-    transform: scale(1.1);
-  }
-
-  main {
-    flex: 1;
-    padding: 40px 30px;
-    max-width: 900px;
-    margin: auto;
-    animation: fadeInUp 1s ease forwards;
+.back-to-home-button-container {
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
     opacity: 0;
-  }
+}
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+.back-to-home-button {
+    background-color: #3b82f6; /* Blue button color */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-home-button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.content-grid {
+    display: grid;
+    /* Define grid columns for different screen sizes */
+    grid-template-columns: repeat(1, 1fr); /* Default for small screens */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) { /* Medium screens and up */
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+}
+
+@media (min-width: 1024px) { /* Large screens and up */
+    .content-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
     }
-  }
-
-  main h2 {
-    color: #ffe082;
-    margin-bottom: 20px;
-    font-size: 2em;
-    animation: slideInLeft 1.2s ease-out;
-  }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
+    /* Adjust specific sections if they need to span more columns */
+    .header-design-4 { /* Example: if a specific header needs to span 2 columns */
+        grid-column: span 2;
     }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+}
 
-  main p {
-    line-height: 1.6;
-    font-size: 1.1em;
-    animation: fadeIn 2s ease;
-  }
 
-  @keyframes fadeIn {
+.grid-section {
+    background-color: rgba(4, 120, 87, 0.2); /* Transparent dark green for sections */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    opacity: 0; /* Start hidden for stagger */
+    border: 1px solid rgba(110, 231, 183, 0.3); /* Subtle green border */
+}
+
+/* Staggered animation delays for grid sections */
+.grid-section:nth-child(1) { animation-delay: 0.5s; }
+.grid-section:nth-child(2) { animation-delay: 0.6s; }
+.grid-section:nth-child(3) { animation-delay: 0.7s; }
+.grid-section:nth-child(4) { animation-delay: 0.8s; }
+.grid-section:nth-child(5) { animation-delay: 0.9s; }
+
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #6ee7b7; /* Soft green for section titles */
+}
+
+.grid-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grid-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-link, .section-link {
+    color: #93c5fd; /* Light blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block; /* Make the whole list item clickable */
+}
+
+.nav-link:hover, .section-link:hover {
+    color: #e0f2fe; /* Lighter blue on hover */
+    transform: translateX(5px);
+}
+
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #6ee7b7; /* Green border */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    color: #e0f2fe; /* Light blue text for input */
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #93c5fd;
+    opacity: 0.8;
+}
+
+.search-button {
+    background-color: #3b82f6; /* Blue button */
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.search-button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+
+/* Animations */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
+}
 
-  footer {
-    background: rgba(0, 0, 0, 0.7);
-    color: #aaa;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
-    animation: pulseText 3s ease-in-out infinite;
-  }
-
-  @keyframes pulseText {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; }
-  }
-</style>
+@keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
