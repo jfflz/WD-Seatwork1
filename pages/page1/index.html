@@ -1,79 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Designs</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <title> Headers Designs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="min-h-screen flex flex-col font-inter text-gray-100">
-    <div class="main-container">
-        <h1 class="page-title">Header Designs</h1>
-        <!-- This is the "Back Home" button code with special styling -->
-        <div class="back-to-home-button-container">
-            <a href="/WD-Seatwork1/index.html" class="back-to-home-button">Back Home</a>
-        </div>
+<body>
 
-        <div class="content-grid">
-            <!-- Header Design 1: Standard Navigation -->
-            <div class="grid-section header-design-1">
-                <h3 class="section-title">Standard Navigation</h3>
-                <nav class="flex justify-center space-x-4 text-lg">
-                    <a href="../index.html" class="nav-link">HOME</a>
-                    <a href="#" class="nav-link">SERVICES</a>
-                    <a href="#" class="nav-link">CONTACTS</a>
-                </nav>
-            </div>
+  <h1 class="page-title">Header Designs</h1>
+  <a href="../../index.html" class="back-button">Back to Home</a>
+ 
+  <div class="header-wrapper" style="background-color: rgba(48, 22, 8, 0.9); padding: 20px;">
+    <header>
+      <h2 style="font-size: 32px; color: #ffd700;">JL Violinist</h2>
+      <nav style="margin-top: 10px;">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Lessons</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+  </div>
+ 
+  <div class="header-wrapper" style="background: linear-gradient(to right, #4b2e15, #2b1b0e); padding: 20px;">
+    <header style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="../../assets/img/JL Logo.png" class="logo" alt="Logo">
+      <nav>
+        <a href="#">Courses</a>
+        <a href="#">Events</a>
+        <a href="#">Gallery</a>
+      </nav>
+    </header>
+  </div>
 
-            <!-- Header Design 2: Brand with Search -->
-            <div class="grid-section header-design-2">
-                <h3 class="section-title">Brand & Search</h3>
-                <!-- Adjusted layout to move search below MyBrand -->
-                <div class="flex flex-col items-center">
-                    <span class="text-2xl font-bold text-yellow-300 mb-2">MyBrand</span>
-                    <div class="search-container flex w-full justify-center">
-                        <input type="text" placeholder="Search..." class="search-input">
-                        <button class="search-button">Go</button>
-                    </div>
-                </div>
-            </div>
+  
 
-            <!-- Header Design 3: User Account & Dashboard -->
-            <div class="grid-section header-design-3">
-                <h3 class="section-title">User Account</h3>
-                <!-- Changed 'items-center' to 'items-start' and added 'pl-4' for left alignment with padding -->
-                <nav class="flex flex-col items-start space-y-2 text-sm pl-4">
-                    <a href="#" class="nav-link">Dashboard</a>
-                    <a href="#" class="nav-link">Profile</a>
-                    <a href="#" class="nav-link">Settings</a>
-                </nav>
-            </div>
+ 
+  <div class="header-wrapper" style="background-color: rgba(66, 34, 16, 0.9); padding: 30px;">
+    <header>
+      <p style="font-family: 'Great Vibes', cursive; font-size: 40px; color: #ffc107;">JL &nbsp; Violinist</p>
+      <div class="icon-links">
+        <a href="#">ⓕ</a>
+        <a href="#">𝕏</a>
+        <a href="#">🌐</a>
+      </div>
+    </header>
+  </div>
 
-            <!-- Header Design 4: Multi-level Navigation (Placeholder for more complex structure) -->
-            <div class="grid-section header-design-4">
-                <h3 class="section-title">Detailed Navigation</h3>
-                <nav class="flex flex-col items-center space-y-2 text-lg">
-                    <a href="#" class="nav-link">Main</a>
-                    <a href="#" class="nav-link">About Us</a>
-                    <a href="#" class="nav-link">Products</a>
-                    <a href="#" class="nav-link">Blog</a>
-                    <a href="#" class="nav-link">Contact</a>
-                </nav>
-            </div>
+ 
+  <div class="header-wrapper" style="background: rgba(36, 18, 8, 0.85); padding: 25px;">
+    <header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <h3 style="color: #f9d976;">JL Violinist</h3>
+      <nav>
+        <a href="#">Library</a>
+        <a href="#">Forums</a>
+        <a href="#">Downloads</a>
+      </nav>
+      <div class="search-bar" style="margin-top: 10px;">
+        <input type="text" placeholder="Search music...">
+        <button>Go</button>
+      </div>
+    </header>
+  </div>
 
-            <!-- Header Design 5: Welcome & Authentication -->
-            <div class="grid-section header-design-5">
-                <h3 class="section-title">Welcome & Auth</h3>
-                <!-- Changed 'items-center' to 'items-start' and added 'pl-4' for left alignment with padding -->
-                <nav class="flex flex-col items-start space-y-2 text-sm pl-4">
-                    <a href="#" class="nav-link">Welcome</a>
-                    <a href="#" class="nav-link">Login</a>
-                    <a href="#" class="nav-link">Sign Up</a>
-                </nav>
-            </div>
-        </div>
-    </div>
+ 
+<div class="header-wrapper" style="background-color: rgba(40, 20, 10, 0.92); display: flex; flex-wrap: wrap; align-items: center; padding: 20px;">
+ 
+  <div style="flex: 1; min-width: 250px; text-align: center;">
+    <img src="../../assets/img/JL Logo.png" alt="Violin" style="max-height: 100px; object-fit: contain;">
+  </div>
+ 
+  <div style="flex: 2; min-width: 300px;">
+    <h2 style="color: #ffd700; font-size: 30px;">Master the Violin</h2>
+    <p style="margin: 10px 0; color: #fff2cc;">Learn. Practice. Perform.</p>
+    <nav style="margin-top: 10px;">
+      <a href="#">Tutorials</a>
+      <a href="#">Sheet Music</a>
+      <a href="#">Community</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</div>
+
+
 </body>
 </html>

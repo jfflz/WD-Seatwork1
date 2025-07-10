@@ -1,106 +1,180 @@
-/* Custom font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-body {
-    font-family: 'Inter', sans-serif;
-}
-
-/* Animations for Page 2 */
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-        opacity: 1;
-        transform: scale(1);
+
+    body {
+      background: url('C:/Users/ACER/OneDrive/Desktop/WD-Seatwork1/WD-Seatwork1/assets/img/1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
     }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    h1.page-title {
+      font-size: 48px;
+      color: #ffd700;
+      text-shadow: 2px 2px 5px #000;
+      margin-bottom: 20px;
     }
-    to {
-        opacity: 1;
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 50px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #b8860b;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
     }
-}
 
-@keyframes pulseEffect {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.4);
+    .back-button:hover {
+      background-color: #e0a800;
     }
-    70% {
-        transform: scale(1.02);
-        box-shadow: 0 0 0 10px rgba(0, 0, 255, 0);
+
+    .footer-wrapper {
+      max-width: 1000px;
+      margin: 40px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      text-align: left;
     }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(0, 0, 255, 0);
+
+    footer {
+      padding: 30px;
+      font-size: 16px;
     }
-}
 
-@keyframes rotateY {
-    from {
-        opacity: 0;
-        transform: rotateY(90deg);
+    a {
+      color: #ffd280;
+      text-decoration: none;
+      transition: 0.3s;
     }
-    to {
-        opacity: 1;
-        transform: rotateY(0deg);
+
+    a:hover {
+      text-decoration: underline;
+      color: #ffffff;
     }
-}
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .footer-column {
+      flex: 1;
+      min-width: 180px;
     }
-}
 
-.animate-scale-in {
-    animation: scaleIn 0.8s ease-out forwards;
-}
+    .newsletter-input {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+    }
 
-.animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-}
+    .newsletter-button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      background-color: #ffb74d;
+      border: none;
+      color: #2d1409;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.animate-fade-in-delay {
-    animation: fadeIn 1s ease-out forwards;
-    animation-delay: 1s;
-    opacity: 0;
-}
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 20px;
+    }
 
-.animate-pulse-effect {
-    animation: pulseEffect 2s infinite;
-}
+    .logo-footer {
+      width: 80px;
+      margin-bottom: 10px;
+    }
 
-.animate-rotate-y {
-    animation: rotateY 1s ease-out forwards;
-    animation-delay: 1.5s;
-    opacity: 0;
-}
+    .footer-credits {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+ 
+    .footer3-wrapper {
+      display: flex;
+      align-items: center;
+      background-color: #3e1f10;
+      padding: 0;
+      color: #fffbe6;
+    }
 
-.animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-    animation-delay: 2s;
-    opacity: 0;
-}
+    .footer3-image {
+      flex: 1;
+      background: url('../assets/img/violin-side.jpg') no-repeat center center;
+      background-size: cover;
+      min-height: 200px;
+    }
 
-/* Navigation link hover effect */
-.nav-link {
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+    .footer3-content {
+      flex: 2;
+      padding: 30px;
+    }
 
-.nav-link:hover {
-    color: #bfdbfe; /* blue-200 */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-}
+    .footer3-input {
+      width: 60%;
+      display: inline-block;
+    }
+
+    .footer3-button {
+      margin-left: 10px;
+    }
+
+ 
+    .footer4-wrapper {
+      background-color: #2c1408;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .footer4-quote {
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+      color: #ffd1a9;
+    }
+
+    .footer4-author {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+ 
+    .footer5-wrapper {
+      background: linear-gradient(135deg, #1e0e05, #4e2c1c);
+      color: #f7e0b5;
+    }
+
+    .footer5-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer5-grid div {
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+    }
+
+    .footer5-button {
+      margin-top: 20px;
+    }

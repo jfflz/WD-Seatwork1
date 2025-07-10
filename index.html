@@ -1,106 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Majestic Lioness</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Updated background to a brown and blue gradient */
-            background: linear-gradient(135deg, #4a2c00 0%, #0a2e50 50%, #8b4513 100%); /* Dark brown to dark blue to saddle brown */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Keeps background fixed on scroll */
-            color: #e0f2fe; /* Light blue text for overall page */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            text-align: center; /* Ensure text inside is centered */
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        /* Main page content styling */
-        .main-page-content {
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly more opaque dark background for text */
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            animation: fadeInScale 1.5s ease-out forwards;
-            max-width: 800px;
-            width: 90%;
-        }
-
-        .main-page-content h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #fcd34d; /* Keeping a warm yellow for contrast with brown/blue */
-            text-shadow: 0 0 10px rgba(252, 211, 77, 0.7);
-        }
-
-        .main-page-content h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: #93c5fd; /* Light blue for subtitle */
-        }
-
-        .main-page-content .clickable-section {
-            background-color: rgba(60, 40, 20, 0.4); /* Transparent brown for sections */
-            padding: 1.5rem 2rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            border: 1px solid rgba(139, 69, 19, 0.5); /* Subtle brown border */
-        }
-
-        .main-page-content .clickable-section:hover {
-            background-color: rgba(60, 40, 20, 0.6);
-            transform: translateY(-5px);
-        }
-
-        .main-page-content .clickable-section a {
-            color: #e0f2fe; /* Light blue for links */
-            text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: block; /* Make the whole div clickable via the link */
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>WD - Seatwork - 1</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="main-page-content">
-        <h1>Wd-Seatwork-1</h1>
-        <h2>Jeff Lazo</h2>
+  <div class="container">
+    <img src="assets/img/JL Logo.png" alt="JL Logo" class="logo">
 
-        <div class="clickable-section">
-            <!-- Link to page1/index.html for Header Designs -->
-            <a href="pages/page1/index.html">Header Designs</a>
-        </div>
+  
+    <h1 class="title">WD - SEATWORK - 1</h1>
+    <h3 class="author">Jeff Lazo</h3>
 
-        <div class="clickable-section">
-            <!-- Link to page2/index.html for Footer Designs -->
-            <a href="pages/page2/index.html">Footer Designs</a>
-            
-        </div>
+    <div class="buttons"> 
+     <a style="color:white;text-decoration: none;" href="pages/page1/index.html"> <button>HEADERS</button> </a>
+     <a style="color:white;text-decoration: none;" href="pages/page2/index.html"> <button>FOOTERS</button> </a>
     </div>
+  </div>
 </body>
 </html>
