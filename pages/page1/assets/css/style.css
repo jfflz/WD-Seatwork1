@@ -6,7 +6,7 @@
     }
 
     body {
-      background: url('C:/Users/ACER/OneDrive/Desktop/WD-Seatwork1/WD-Seatwork1/assets/img/1.jpg') no-repeat center center fixed;
+      background: url('../img/1.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Playfair Display', serif;
       color: white;
